@@ -9,7 +9,7 @@ import Dropdown from "./components/Dropdown.jsx";
 
 function App() {
     const [count, setCount] = useState(0);
-    const [text, setText] = useState("");
+    const [text, setText] = useState("1");
 
     const ghostbusters = [
         {
@@ -25,18 +25,21 @@ function App() {
         { id: 4, label: "Winston Zeddemore", value: "Winston Zeddemore" },
     ];
 
-    const onClick = () => {
-        setCount((count) => count + 1);
+    const onClick = (e) => {
+        setCount((count) => count + parseInt(text));
     };
 
     return (
         <div className="container mx-auto p-4">
-            <img
-                src={`/assets/ghostbusters-logo_no_bkgnd.png`}
-                alt="Ghostbusters"
-                className="w-64 h-64"
-            />
-            <h1 className="text-4xl font-bold">Ghostbusters Gear</h1>
+            <div className="flex justify-between">
+                <h1 className="text-4xl font-bold">Ghostbusters Gear</h1>
+                <img
+                    src={`/assets/ghostbusters-logo_no_bkgnd.png`}
+                    alt="Ghostbusters"
+                    className="w-64 h-64"
+                />
+            </div>
+
             <div className="card">
                 <p className="count mb-3">You clicked {count} times</p>
                 <TextInput
@@ -66,7 +69,7 @@ function App() {
                     imageClassName={"size-10 rounded-md"}
                 />
             </div>
-            <label className="block mt-4">{text}</label>
+            {/* <label className="block mt-4">{text}</label> */}
         </div>
     );
 }
