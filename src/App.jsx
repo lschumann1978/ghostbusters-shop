@@ -17,7 +17,7 @@ function App() {
             name: "Peter Venkman",
             label: "Peter Venkman",
             value: "Peter Venkman",
-            image: "/assets/images/peter-venkman-image.png",
+            image: `${process.env.PUBLIC_URL}/assets/peter-venkman-image.png`,
             email: "peter.venkman@ghostbusters.com",
         },
         { id: 2, label: "Ray Stantz", value: "Ray Stantz" },
