@@ -19,9 +19,11 @@ const Dropdown = ({
                 disabled={disabled}
                 onChange={onChange}
             >
-                <option value="">{defaultValue}</option>
-                {listItems.map((item) => (
-                    <option key={item.value} value={item.value}>
+                <option key="0" value="">
+                    {defaultValue}
+                </option>
+                {listItems.map((item, index) => (
+                    <option key={index} value={item.value}>
                         {item.label}
                     </option>
                 ))}

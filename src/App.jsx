@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button.jsx";
-import List from "./components/List.jsx";
+import List from "./components/List/List.jsx";
 import TextInput from "./components/TextInput.jsx";
 
 import { BrowserRouter as router, Routes, Route, Link } from "react-router-dom";
@@ -11,14 +11,12 @@ function App() {
     const [count, setCount] = useState(0);
     const [text, setText] = useState("1");
 
-    const ghostbusters = [
+    const products = [
         {
             id: 1,
-            name: "Peter Venkman",
-            label: "Peter Venkman",
-            value: "Peter Venkman",
-            image: `/assets/peter-venkman-photo.png`,
-            email: "peter.venkman@ghostbusters.com",
+            titleText: "Proton Pack",
+            subTitleText: "Official Ghostbusters Proton Pack",
+            image: `/assets/proton_pack.png`,
         },
         { id: 2, label: "Ray Stantz", value: "Ray Stantz" },
         { id: 3, label: "Egon Spengler", value: "Egon Spengler" },
@@ -31,12 +29,12 @@ function App() {
 
     return (
         <div className="container mx-auto p-4">
-            <div className="flex justify-between">
+            <div className="flex flex-grow items-center justify-center">
                 <h1 className="text-4xl font-bold">Ghostbusters Gear</h1>
                 <img
                     src={`/assets/ghostbusters-logo_no_bkgnd.png`}
                     alt="Ghostbusters"
-                    className="w-64 h-64"
+                    className="w-64 h-64 ml-6"
                 />
             </div>
 
@@ -58,18 +56,18 @@ function App() {
                 </Button>
                 <Dropdown
                     classNames={"border border-blue-700 rounded-md p-2"}
-                    listItems={ghostbusters}
+                    listItems={[]}
                     labelText={"Pick your favorite Ghostbuster:"}
                     defaultValue="Select an Ghostbuster"
                     imageClassName="w-10 h-10"
                     onChange={(e) => console.log(e.target.value)}
                 />
                 <List
-                    listItems={ghostbusters}
-                    imageClassName={"size-10 rounded-md"}
+                    className={"flex flex-wrap"}
+                    listItems={products}
+                    imageClassName={"rounded-md py-2"}
                 />
             </div>
-            {/* <label className="block mt-4">{text}</label> */}
         </div>
     );
 }
