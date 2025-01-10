@@ -17,12 +17,12 @@ function App() {
             name: "Peter Venkman",
             label: "Peter Venkman",
             value: "Peter Venkman",
-            image: "/src/assets/peter-venkman-image.png",
+            image: "/assets/images/peter-venkman-image.png",
             email: "peter.venkman@ghostbusters.com",
         },
-        { label: "Ray Stantz", value: "Ray Stantz" },
-        { label: "Egon Spengler", value: "Egon Spengler" },
-        { label: "Winston Zeddemore", value: "Winston Zeddemore" },
+        { id: 2, label: "Ray Stantz", value: "Ray Stantz" },
+        { id: 3, label: "Egon Spengler", value: "Egon Spengler" },
+        { id: 4, label: "Winston Zeddemore", value: "Winston Zeddemore" },
     ];
 
     const onClick = () => {
