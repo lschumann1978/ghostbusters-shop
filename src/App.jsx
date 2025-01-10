@@ -17,7 +17,7 @@ function App() {
             name: "Peter Venkman",
             label: "Peter Venkman",
             value: "Peter Venkman",
-            image: `${process.env.PUBLIC_URL}/assets/peter-venkman-image.png`,
+            image: `/assets/images/peter-venkman-photo.png`,
             email: "peter.venkman@ghostbusters.com",
         },
         { id: 2, label: "Ray Stantz", value: "Ray Stantz" },
@@ -32,7 +32,7 @@ function App() {
     return (
         <div className="container mx-auto p-4">
             <img
-                src="/src/assets/ghostbusters-logo_no_bkgnd.png"
+                src={`/assets/images/ghostbusters-logo_no_bkgnd.png`}
                 alt="Ghostbusters"
                 className="w-64 h-64"
             />
